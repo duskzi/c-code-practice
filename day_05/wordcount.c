@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define WC_SIZE 255
+#define WC_SIZE 256
 
 int main(void)
 {
