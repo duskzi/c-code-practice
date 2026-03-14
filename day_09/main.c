@@ -1,12 +1,5 @@
 #include <stdio.h>
 
-int strl(char *str)
-{
-    int i = 0; 
-    while(str[i] != '\0') i++;
-    return i;
-}
-
 void swapc(char *a, char *b)
 {
     char temp = *a;
@@ -16,12 +9,13 @@ void swapc(char *a, char *b)
 
 void strinv(char *string)
 {
-    // Find end of string
-    int len = strl(string);
-
     // Set left pointer to start
     char *first = string;
-    char *last = string + len - 1;
+    char *last = string;
+
+    // Prevent from using str lenght
+    while(*last != '\0') last++;
+    last--;
 
     while(first < last)
     {
@@ -30,6 +24,7 @@ void strinv(char *string)
         last--;
     }
 }
+
 int main(void)
 {
     char string[128];
