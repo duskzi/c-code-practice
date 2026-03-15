@@ -1,19 +1,17 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <math.h>
 
-#define PROGRESS 100
-#define BAR_WIDTH 16
-int main(void)
+#define PRGSBAR_WIDTH 16
+
+void print_progress(float prgs)
 {
-    for(int i=0; i<=PROGRESS; i+=1)
-    {
-        usleep(32000);
         printf("\r");
         printf("Progress: [");
 
         for(int p=0; p<BAR_WIDTH; p++)
         {
-            if(p < ((float)i/PROGRESS*BAR_WIDTH))
+            if(p < ((float)prgs/1.0*BAR_WIDTH))
             {
                 printf("#");
             }
@@ -24,8 +22,18 @@ int main(void)
         }
 
         printf("]");
-        printf(" %i%%", i);
+        printf(" %.2f%%", prgs*100.0);
         fflush(stdout);
+}
+
+int main(void)
+{
+    float i=0;
+    while(true)
+    {
+        i+=0.45;
+        usleep(240000);
+        print_progress(sin(i)*0.5 + 0.5);
     }
     return 0;
 }

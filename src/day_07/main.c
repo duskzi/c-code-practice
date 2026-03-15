@@ -8,7 +8,7 @@ int flip_a_coin(void){
 
 int main(void)
 {
-    const int TIMES = 90000000;
+    const int TIMES = 90000;
 
     srand(time(NULL));
 

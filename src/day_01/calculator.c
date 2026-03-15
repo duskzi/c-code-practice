@@ -4,12 +4,11 @@ DISCLAIMER:
 Dear reader,
 
 I'm not using pointers to my calculator because
-a pointer is, in my PC, 8 bytes long, and I do
-not want to spend precious 2 bytes of memory.
+a pointer is, in my PC, 8 bytes long, so I prefer
+using floats instead.
 
 Thanks for reading, Dusk.
 */
-
 #include <stdio.h>
 
 float add(float a, float b){
@@ -29,8 +28,7 @@ float divide(float a, float b){
 }
 
 int scan_input(float *input){
-    if(scanf("%f", input) != 1)
-    {
+    if(scanf("%f", input) != 1){
         printf("Invalid input\n");
         return 1;
     }
@@ -40,7 +38,7 @@ int scan_input(float *input){
 
 int main(void){
     // True because i'm returning with 0
-    while(1) {
+    while(1){
         printf("What operation would you choose?\n");
 
         printf("[1] Add\n");
@@ -53,7 +51,7 @@ int main(void){
 
         // Don't know why BUT it's a buffer
         // issue that happens
-        if (scanf("%i", &option) != 1) {
+        if (scanf("%i", &option) != 1){
             printf("Invalid option\n");
             while (getchar() != '\n');
             continue;
