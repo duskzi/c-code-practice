@@ -1,0 +1,7 @@
+@t{The apple}
+
+@h{The apple is good}
+
+And the apple is @color{red}
+
+The @*{people} cannot @_{fly}
