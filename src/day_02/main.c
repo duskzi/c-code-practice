@@ -2,6 +2,9 @@
 #include <unistd.h>
 #include <math.h>
 
+#define true 1
+#define false 0
+
 #define PRGSBAR_WIDTH 16
 
 void print_progress(float prgs)
@@ -9,9 +12,9 @@ void print_progress(float prgs)
         printf("\r");
         printf("Progress: [");
 
-        for(int p=0; p<BAR_WIDTH; p++)
+        for(int p=0; p<PRGSBAR_WIDTH; p++)
         {
-            if(p < ((float)prgs/1.0*BAR_WIDTH))
+            if(p < ((float)prgs/1.0*PRGSBAR_WIDTH))
             {
                 printf("#");
             }
